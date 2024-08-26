@@ -22,5 +22,3 @@ Route::post('/update', [TodosController::class,'updateData'])->name("todo.update
 Route::post('/create', [TodosController::class,'store'])->name("todo.store");
 
 //delete toto route
-Route::get('/delete/{id}', [TodosController::class,'delete'])->name("todo.delete");
-
