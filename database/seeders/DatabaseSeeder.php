@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\todos;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,11 +13,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
 
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+        ]);
+
+        todos::insert([
+            [
+                'name' => 'Buy groceries',
+                'work' => 'Shopping',
+                'duedate' => '2024-08-30',
+            ],
+            [
+                'name' => 'Finish Laravel project',
+                'work' => 'Development',
+                'duedate' => '2024-09-15',
+            ]
         ]);
     }
 }
